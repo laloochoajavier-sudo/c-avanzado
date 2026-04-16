@@ -6,3 +6,4 @@
 //tambien se puede usar en punteros 
 #include <iostream>
 #include <vector>
+y
