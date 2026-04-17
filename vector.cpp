@@ -13,10 +13,23 @@
 #include <iostream>
 #include <vector>
 int main(){
-std::vector<int> records(10); //declaramos un vector de enteros llamado records
-std::vector<char> letras(10); //declaramos un vector de caracteres llamado letras
-for(int i=0; i<10; i++){
-    std::cout<<records[i]<<'\n';
+std::vector<int> records{10,25,30}; //declaramos un vector de enteros llamado records
+
+std::vector<char> letras{'x','y','z'}; //declaramos un vector de caracteres llamado letras
+
+std::vector<double> salario_base(350,2500.50); //declaramos un vector de doubles llamado salario_base con 350 elementos, cada uno con el valor 2500.50
+
+std::vector<std::string> nombres(250,"John"); //declaramos un vector de strings llamado nombres con 250 elementos
+
+for(int i=0; i<salario_base.size() && i<nombres.size(); i++){ //.size() devuelve el número de elementos en el vector
+    std::cout<<nombres[i]<<" "<<salario_base[i]<<'\n';
+}
+
+int i=349;
+//es mejor el bucle while para recorrer el vector de atrás hacia adelante, ya que el índice se decrementa en cada iteración
+while(i<salario_base.size()){
+    std::cout<<salario_base[i]<<'\n';
+    i++;
 }
 return 0;
 }
