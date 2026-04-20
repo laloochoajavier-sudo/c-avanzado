@@ -11,6 +11,13 @@ numeros.at(3)=100;//modificamos el valor del elemento en la posicion 3 del vecto
 
 std::cout << "El numero en la posicion 3 es: " << numeros.at(3) << std::endl; //accedemos al elemento en la posicion 3 del vector numeros
 //.at si intentas acceder a una pocision que no existe, lanza una excepcion, mientras que con los corchetes [] no se lanza una excepcion y puede causar un comportamiento indefinido
-    
+numeros.push_back(75); //agregamos el numero 75 al final del vector numeros
+std::cout << "El numero en la posicion 4 es: " << numeros.at(4) << std::endl; //accedemos al elemento en la posicion 4 del vector numeros
+
+for (int i = 0; i < numeros.size(); i++)
+{
+    std::cout << numeros.at(i) << '\n';
+}
+
     return 0;
 }
