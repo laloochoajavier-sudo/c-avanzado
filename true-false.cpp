@@ -1,40 +1,61 @@
 #include <iostream>
-void preguntas(int puntos){
+#include <string>
+#include <algorithm>
+#include <cctype>  
+using namespace std;
+string toUpper(const string& s) {
+    string resultado = s;
+    transform(resultado.begin(), resultado.end(), resultado.begin(),
+              [](unsigned char c){ return toupper(c); });
+    return resultado;
+}
+void preguntas(int &puntos);
+int main(){
+std::cout<<"Bienvenido a este cuestionario de verdadero o falso!"<<std::endl;
+int puntos = 0;
+preguntas(puntos);
+
+std::cout<<"Gracias por participar estos son tus puntos: "<<puntos<<std::endl;
+
+return 0;
+}
+void preguntas(int &puntos){
 
     std::cout<<"el cielo es verde?"<<std::endl;
     std::string cielo;
     std::cin>>cielo;
-    if(cielo == "no"||cielo == "No"||cielo == "NO"||cielo == "nO"||cielo == "nó"||cielo == "Nó"||cielo == "NÓ"||cielo == "nÓ"){
+    cielo = toUpper(cielo);
+    if(cielo == "NO"){
         std::cout<<"Correcto!"<<std::endl;
         puntos++;
-    }else{
+    }
+    else if(cielo == "SI"){
         std::cout<<"Incorrecto!"<<std::endl;
+    }else{
+        std::cout<<"Respuesta no valida!"<<std::endl;
     }
     std::cout<<"sale el sol de noche?"<<std::endl;
     std::string sol;
     std::cin>>sol;
-    if(sol == "no"||sol == "No"||sol == "NO"||sol == "nO"||sol == "nó"||sol == "Nó"||sol == "NÓ"||sol == "nÓ"){
+    sol = toUpper(sol);
+    if(sol == "NO"){
         std::cout<<"Correcto!"<<std::endl;
         puntos++;
-    }else{
+    }else if(sol == "SI"){
         std::cout<<"Incorrecto!"<<std::endl;
+    }else{
+        std::cout<<"Respuesta no valida!"<<std::endl;
     }
     std::cout<<"tienes nombre?"<<std::endl;
     std::string nombre;
     std::cin>>nombre;
-    if(nombre == "si"||nombre == "Si"||nombre == "SI"||nombre == "sI"||nombre == "sí"||nombre == "Sí"||nombre == "SÍ"||nombre == "sÍ"){
+    nombre = toUpper(nombre);
+    if(nombre == "SI"){
         std::cout<<"Correcto!"<<std::endl;
         puntos++;
-}else{
+    }else if(nombre == "NO"){
         std::cout<<"Incorrecto!"<<std::endl;
+    }else{
+        std::cout<<"Respuesta no valida!"<<std::endl;
     }
 }
-int main(){
-std::cout<<"Bienvenido a este cuestionario de verdadero o falso!"<<std::endl;
-preguntas(0);
-std::cout<<"Gracias por participar estos son tus puntos: "<<puntos<<std::endl;
-
-
-    return 0;
-}
-
