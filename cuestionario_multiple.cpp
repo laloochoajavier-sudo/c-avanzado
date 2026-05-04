@@ -13,6 +13,7 @@ string toUpper(const string& s) {
 void preguntas(int &puntos){
 std::string respuesta1;
 std::string respuesta2;
+std::string respuesta3; 
 std::cout<<"Cual es la capital de Francia?"<<std::endl;
 std::cout<<"a) Londres"<<std::endl;
 std::cout<<"b) Paris"<<std::endl;
@@ -23,7 +24,7 @@ respuesta1 = toUpper(respuesta1);
     if(respuesta1 == "B") {
         std::cout<<"Correcto!"<<std::endl;
         puntos++;
-    }else if(respuesta1 == "A" || respuesta1 == "C" || respuesta1 == "D"){
+    }else if(respuesta1 != "B"){
         std::cout<<"Incorrecto!"<<std::endl;
     }else{
         std::cout<<"Respuesta no valida!"<<std::endl;}
@@ -37,8 +38,23 @@ respuesta2 = toUpper(respuesta2);
     if(respuesta2 == "B"){
         std::cout<<"Correcto!"<<std::endl;
         puntos++;
-    }else if(respuesta2 == "A" || respuesta2 == "C" || respuesta2 == "D"){
+    }else if(respuesta2 != "B"){
         std::cout<<"Incorrecto!"<<std::endl;
+    }else{
+        std::cout<<"Respuesta no valida!"<<std::endl;
+    }
+std::cout<<"pregunta trampa: Cual es el lenguaje de programacion mas usado?"<<'\n';
+std::cout<<"a) Python"<<std::endl;
+std::cout<<"b) Java"<<std::endl;
+std::cout<<"c) JavaScript"<<std::endl;
+std::cout<<"d) C++"<<std::endl;
+std::cin>>respuesta3;
+respuesta3 = toUpper(respuesta3);
+    if(respuesta3 != "A"){
+        std::cout<<"Incorrecto!"<<std::endl;
+    }else if(respuesta3 == "A"){
+        std::cout<<"Correcto!"<<std::endl;
+        puntos++;
     }else{
         std::cout<<"Respuesta no valida!"<<std::endl;
     }
